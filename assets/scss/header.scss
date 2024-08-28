@@ -1,0 +1,434 @@
+
+.header__info {
+    margin-top: 17px;
+    margin-bottom: 21px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+    
+
+    &-sity {
+        color: $default;
+        padding-left: 30px;
+        position: relative;
+        font-weight: 500;
+        line-height: 21px;
+
+    }
+    &-sity:hover {
+      color: $orange;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    &-sity::before {
+        content: "";
+        width: 24px;
+        height: 24px;
+        background: url('../img/header/point_adress.svg');
+        position: absolute;
+        left: 0;
+        top: -6px;
+    }
+
+    &-label {
+        display: flex;
+        align-items: center;
+    }
+
+    &-item {
+        margin-left: 70px;
+        padding-left: 35px;
+        cursor: pointer;
+        position: relative;
+
+
+
+    }
+
+    &-link:hover {
+        color: $orange;
+        text-decoration: underline;
+
+    }
+    &-link {
+      color: $default;
+      font-weight: 500;
+      line-height: 21px;
+
+  }
+
+
+    &-item::before {
+        content: "";
+        width: 24px;
+        height: 24px;
+        position: absolute;
+       
+    }
+
+
+    &-item--map-img::before {
+        background: url('../img/header/map.svg');
+        left: 0;
+        top: 13px;
+    }
+
+
+    &-sity:hover::before {
+       transition: all 0.3s;
+      transform: scale(1.1, 1.1);
+    }
+
+    &-item:hover::before {
+      transition: all 0.3s;
+      transform: scale(1.1, 1.1);      
+       
+    }
+
+    &-item--phone-img::before {
+        background: url('../img/header/phone-call.svg');
+        left: 0;
+        top: 0;
+    }
+
+    &-label li:nth-child(1) {
+        max-width: 200px;
+    }
+
+}
+
+
+
+.header__nav {
+    background: $grey;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+    transition: all 0.1s;
+    position: relative;
+    
+
+    &-menu {
+        display: flex;
+        cursor: pointer;
+        
+
+    }
+
+    &-link {
+        color: $default;
+        font-weight: 500;
+        line-height: 21px;
+        
+    }
+
+    &-item {
+      padding: 20px 27px;
+      position: relative;
+      
+      
+    }
+
+    & .wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      
+    }
+
+   }
+
+  .menu-icon {
+    display: none;
+}
+
+
+
+
+.header__nav--top {
+   position: fixed;
+   width: 100%;   
+   top: -100px;
+    transition: all .1s;
+    opacity: .9;
+    z-index: 20;
+}
+
+
+.header__nav--top--2 {
+    top: 0;
+    transition: all .1s;
+}
+
+
+.header__nav-item:hover{
+  background:#f1f1f1;  
+  transition: all .3s;
+
+}
+.header__nav-item:hover::after{
+  content: '';
+  height: 2px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0 ;
+  background: $orange;
+  transition: all .3
+}
+
+.main_siti {
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 21px;
+	color: #222627;
+
+}
+
+.sochi {
+	color: #EA7D3D;
+	font-weight: 500;
+
+}
+
+.modal_siti {
+	padding: 40px 68px 60px 68px;
+	background: #F7F7FB;
+	width: 795px;
+	height: 590px;
+	box-shadow: 0px 10px 20px -8px rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
+	
+ 
+
+}
+
+.modal_siti_letter_big {
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 28px;
+	color: #EA7D3D;
+	margin-top: 5px;
+}
+
+.modal_siti_letter_tawns {
+	font-size: 16px;
+	line-height: 28px;
+	font-style: normal;
+	font-weight: normal;
+	color: #0B1F35;
+
+}
+
+.modal_siti_flex {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	height: 100%;
+  // padding: 44px;
+	/*align-content: flex-start;*/
+}
+
+#selectableModal {
+  padding: 44px;
+  
+}
+
+.modal_siti_flex a {
+	display: block;
+}
+
+.modal_siti_flex a:hover {
+	color: #EA7D3D;
+}
+
+.modal_siti.fancybox-content {
+	background: #F7F7FB;
+}
+
+.modal_siti_letter {
+	width: 150px;
+
+}
+
+.sochi {
+	color: #EA7D3D;
+	font-weight: 500;
+
+}
+
+
+
+
+
+
+@include breakpoint(768) {
+    .header__info-item--map-img {
+        display: none;
+    }
+
+    .header__nav-menu {
+        display: none;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+    .header__nav-logo {
+      padding: 10px 0;
+    }
+}
+
+// -------------------------------------стиль кнопки
+/*  COLORS
+========================================= */
+
+
+$white: $default;
+
+/*  MIXINS
+========================================= */
+
+@mixin animation($animation) {
+  -webkit-animation: #{$animation};
+     -moz-animation: #{$animation};
+       -o-animation: #{$animation};
+          animation: #{$animation};
+}
+
+@mixin animation-delay($animation-delay) {
+  -webkit-transition-delay: #{$animation-delay};
+     -moz-transition-delay: #{$animation-delay};
+       -o-transition-delay: #{$animation-delay};
+          transition-delay: #{$animation-delay};
+}
+
+@mixin keyframes($keyframes) {
+  @-webkit-keyframes #{$keyframes} { @content; }
+     @-moz-keyframes #{$keyframes} { @content; }
+       @-o-keyframes #{$keyframes} { @content; }
+          @keyframes #{$keyframes} { @content; }
+}
+
+@mixin transform($transform) {
+  -webkit-transform: $transform;
+     -moz-transform: $transform;
+      -ms-transform: $transform;
+       -o-transform: $transform;
+          transform: $transform;
+}
+
+@mixin transition($transition...) {
+  -webkit-transition: #{$transition};
+     -moz-transition: #{$transition};
+       -o-transition: #{$transition};
+          transition: #{$transition};
+}
+
+@mixin transition-delay($transition-delay) {
+  -webkit-transition-delay: #{$transition-delay};
+     -moz-transition-delay: #{$transition-delay};
+       -o-transition-delay: #{$transition-delay};
+          transition-delay: #{$transition-delay};
+}
+
+/*  RESET
+========================================= */
+
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+/*  MENU ICON
+========================================= */
+
+.menu-icon {
+  position: absolute;
+  top: 50%;
+  left: 90%;  
+  @include transform(translate(-50%, -50%));
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  z-index: 999;
+  
+    
+  
+  .dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background-color: $white;
+    border-radius: 10px;
+    
+    
+    @include transform(translate(-50%, -50%));
+    @include transition(margin .4s ease .4s, width .4s ease);
+    
+    &:nth-of-type(1) {
+      margin-top: -10px;
+      margin-left: -10px;
+      @include transform(translate(-50%, -50%) rotate(45deg));
+    }
+    
+    &:nth-of-type(2) {
+      margin-top: -10px;
+      @include transform(translate(-50%, -50%) rotate(-45deg));
+    }
+    
+    &:nth-of-type(3) {
+      margin-top: -10px;
+      margin-left: 10px;
+    }
+    
+    &:nth-of-type(4) {
+      margin-left: -10px;
+    }
+    
+    &:nth-of-type(5) {  
+      
+    }
+    
+    &:nth-of-type(6) {
+      margin-left: 10px;
+    }
+    
+    &:nth-of-type(7) {
+      margin-top: 10px;
+      margin-left: -10px;
+    }
+    
+    &:nth-of-type(8) {
+      margin-top: 10px;
+    }
+    
+    &:nth-of-type(9) {
+      margin-top: 10px;
+      margin-left: 10px;
+    }
+  }
+  
+  &.clicked {
+    .dot {
+      @include transition(margin .4s ease, width .4s ease .4s);
+      margin-left: 0;
+      margin-top: 0;
+      
+      &:nth-of-type(1) {
+        width: 25px;
+      }
+      
+      &:nth-of-type(2) {
+        width: 25px;
+      }
+    }
+  }
+}
+// -------------------------------------стиль кнопки
