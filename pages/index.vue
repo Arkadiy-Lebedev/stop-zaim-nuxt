@@ -1,0 +1,5 @@
+<template>
+
+    индеккс
+    индеккс
+</template>

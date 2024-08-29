@@ -1,3 +1,16 @@
+<script setup lang="ts">
+
+const menuData = [
+    { name: 'Главная', link: '/' },
+    { name: 'Стоимость', link: '#price' },
+    { name: 'Новости', link: '/news' },
+    { name: 'Отзывы', link: 'reviews.html' },
+    { name: 'Частые вопросы', link: 'question.html' },
+    { name: 'Контакты', link: 'contacts/contacts-page.html' }
+]
+
+</script>
+
 <template>
 <header class="header">
     <div class="container">
@@ -26,24 +39,7 @@
                 </a>
                 <nav>
                     <ul class="header__nav-menu">
-                        <li class="header__nav-item">
-                            <a class="header__nav-link" href="index.html">Главная</a>
-                        </li>
-                        <li class="header__nav-item" onclick="location.href='#price'">
-                            <a class="header__nav-link" href="#price">Стоимость</a>
-                        </li>
-                        <li class="header__nav-item">
-                            <a class="header__nav-link" href="news.html">Новости</a>
-                        </li>
-                        <li class="header__nav-item">
-                            <a class="header__nav-link" href="reviews.html">Отзывы</a>
-                        </li>
-                        <li class="header__nav-item">
-                            <a class="header__nav-link" href="question.html">Частые вопросы</a>
-                        </li>
-                        <li class="header__nav-item">
-                            <a class="header__nav-link" href="contacts/contacts-page.html">Контакты</a>
-                        </li>
+                        <Menu-item v-for="menu in menuData" :name="menu.name" :link="menu.link"></Menu-item>
                     </ul>
                 </nav>
               

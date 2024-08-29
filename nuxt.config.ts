@@ -12,7 +12,8 @@ export default defineNuxtConfig({
 							@use "~/assets/scss/normalize.scss" as *;
 							@use "~/assets/scss/vars.scss" as *;
 							@use "~/assets/scss/fonts.scss" as *;
-							@use "~/assets/scss/header.scss" as *;
+							@use "~/assets/scss/_mixins.scss" as *;
+							@use "~/assets/scss/header.scss" as *;							
 							`,
 				},
 			},

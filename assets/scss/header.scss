@@ -1,3 +1,6 @@
+@import 'vars';
+@import '_mixins';
+
 
 .header__info {
     margin-top: 17px;
@@ -125,7 +128,7 @@
     &-item {
       padding: 20px 27px;
       position: relative;
-      
+      transition: all 1s ease
       
     }
 
@@ -166,15 +169,35 @@
   transition: all .3s;
 
 }
-.header__nav-item:hover::after{
+
+.header__nav-item::after{
   content: '';
   height: 2px;
   position: absolute;
-  left: 0;
-  right: 0;
+  left: 50%;
+  right: 50%;
   bottom: 0 ;
   background: $orange;
-  transition: all .3
+  transition: all .3s ease
+}
+
+.header__nav-item:hover::after, .header__nav-item.active:hover::after{
+  content: '';
+  height: 2px;
+  position: absolute;
+  left:0;
+  right: 0;
+  background: $orange;
+transition: all .3s ease
+}
+
+.header__nav-item.active::after{
+  content: '';
+  height: 2px;
+  position: absolute;
+  left:20%;
+  right: 20%;
+  background: $orange;
 }
 
 .main_siti {
